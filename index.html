@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portafolio profesional de Randall Garcia, desarrollador de software con proyectos en compiladores, sistemas de archivos, automatizacion y aplicaciones web."
+    />
+    <title>Randall Garcia | Portafolio</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2318212f'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial,sans-serif' font-size='24' font-weight='700' fill='white'%3ERG%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">RG</span>
+        <span>Randall Garcia</span>
+      </a>
+      <nav class="nav-links" aria-label="Navegacion principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            src="https://avatars.githubusercontent.com/u/76526778?v=4"
+            alt=""
+            loading="eager"
+          />
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Desarrollador de software</p>
+          <h1>Randall Garcia</h1>
+          <p class="hero-copy">
+            Construyo soluciones con bases solidas: compiladores, interpretes,
+            simuladores de sistemas de archivos, automatizaciones y aplicaciones
+            web listas para usuarios reales.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#proyectos">Ver proyectos</a>
+            <a class="button ghost" href="https://github.com/RSGarcia2002" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Resumen profesional">
+          <div>
+            <strong>10+</strong>
+            <span>repositorios publicos</span>
+          </div>
+          <div>
+            <strong>2026</strong>
+            <span>actividad reciente</span>
+          </div>
+          <div>
+            <strong>Full stack</strong>
+            <span>backend, frontend y despliegue</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section intro-section" aria-label="Enfoque profesional">
+        <div class="section-heading">
+          <p class="eyebrow">Perfil</p>
+          <h2>Ingenieria aplicada con proyectos que se pueden revisar</h2>
+        </div>
+        <div class="intro-grid">
+          <article>
+            <h3>Compiladores y lenguajes</h3>
+            <p>
+              Experiencia construyendo interpretes, analizadores con ANTLR,
+              validaciones semanticas y generacion de codigo.
+            </p>
+          </article>
+          <article>
+            <h3>Sistemas y archivos</h3>
+            <p>
+              Simuladores EXT2/EXT3 en C++ con administracion de discos,
+              usuarios, permisos, reportes y API HTTP.
+            </p>
+          </article>
+          <article>
+            <h3>Aplicaciones utiles</h3>
+            <p>
+              Proyectos web y automatizaciones en Python, JavaScript, PHP y
+              TypeScript orientados a resolver procesos reales.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section projects-section" id="proyectos">
+        <div class="section-heading">
+          <p class="eyebrow">Trabajo destacado</p>
+          <h2>Proyectos relevantes de GitHub</h2>
+        </div>
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <section class="section skills-section" id="habilidades">
+        <div class="section-heading">
+          <p class="eyebrow">Stack</p>
+          <h2>Tecnologias con las que he trabajado</h2>
+        </div>
+        <div class="skills-layout">
+          <div class="skill-group">
+            <h3>Lenguajes</h3>
+            <div class="chips">
+              <span>Python</span>
+              <span>C++</span>
+              <span>PHP</span>
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Go</span>
+              <span>Pascal</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Herramientas</h3>
+            <div class="chips">
+              <span>ANTLR4</span>
+              <span>React</span>
+              <span>Vite</span>
+              <span>CMake</span>
+              <span>Graphviz</span>
+              <span>Git</span>
+              <span>AWS EC2</span>
+              <span>AWS S3</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h3>Areas</h3>
+            <div class="chips">
+              <span>Compiladores</span>
+              <span>Sistemas de archivos</span>
+              <span>APIs HTTP</span>
+              <span>Automatizacion</span>
+              <span>Frontend</span>
+              <span>Reportes tecnicos</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contacto">
+        <div>
+          <p class="eyebrow">Disponible para oportunidades</p>
+          <h2>Hablemos de como puedo aportar a tu equipo</h2>
+          <p>
+            Estoy buscando oportunidades donde pueda crear software util,
+            aprender rapido y trabajar con sistemas que reten tanto la logica
+            como la experiencia de usuario.
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="https://github.com/RSGarcia2002" target="_blank" rel="noreferrer">
+            Ver GitHub
+          </a>
+          <a class="button ghost" href="https://github.com/RSGarcia2002?tab=repositories" target="_blank" rel="noreferrer">
+            Repositorios
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Randall Garcia</span>
+      <a href="https://github.com/RSGarcia2002" target="_blank" rel="noreferrer">@RSGarcia2002</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
