@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplicacion web Batalla de Monstruos con CRUD y simulacion de batallas por turnos."
+    />
+    <title>Batalla de Monstruos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Prueba tecnica</p>
+        <h1>Batalla de Monstruos</h1>
+        <p>
+          Crea monstruos, administra sus atributos y simula combates por turnos
+          aplicando velocidad, ataque, defensa y vida.
+        </p>
+      </div>
+      <div class="header-card">
+        <span id="monsterCount">0</span>
+        <small>monstruos registrados</small>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel form-panel" aria-labelledby="formTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">CRUD</p>
+            <h2 id="formTitle">Agregar monstruo</h2>
+          </div>
+          <button class="icon-button hidden" id="cancelEditButton" type="button" title="Cancelar edicion">
+            Cancelar
+          </button>
+        </div>
+
+        <form id="monsterForm" class="monster-form">
+          <input type="hidden" id="monsterId" />
+          <label>
+            Nombre
+            <input id="name" name="name" required maxlength="40" placeholder="Ej. Draco" />
+          </label>
+          <div class="stats-grid">
+            <label>
+              Vida
+              <input id="health" name="health" required min="1" max="999" type="number" value="100" />
+            </label>
+            <label>
+              Ataque
+              <input id="attack" name="attack" required min="1" max="999" type="number" value="25" />
+            </label>
+            <label>
+              Defensa
+              <input id="defense" name="defense" required min="0" max="999" type="number" value="10" />
+            </label>
+            <label>
+              Velocidad
+              <input id="speed" name="speed" required min="1" max="999" type="number" value="15" />
+            </label>
+          </div>
+          <label>
+            Imagen
+            <input id="image" name="image" type="url" placeholder="https://..." />
+          </label>
+          <button class="button primary" id="saveMonsterButton" type="submit">Guardar monstruo</button>
+        </form>
+      </section>
+
+      <section class="panel battle-panel" aria-labelledby="battleTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Simulador</p>
+            <h2 id="battleTitle">Nueva batalla</h2>
+          </div>
+          <span class="status-pill" id="battleStatus">Lista</span>
+        </div>
+
+        <form id="battleForm" class="battle-form">
+          <label>
+            Monstruo A
+            <select id="monsterA" required></select>
+          </label>
+          <label>
+            Monstruo B
+            <select id="monsterB" required></select>
+          </label>
+          <button class="button accent" type="submit">Iniciar batalla</button>
+        </form>
+
+        <div class="result-card" id="currentResult">
+          <p>Selecciona dos monstruos distintos para comenzar.</p>
+        </div>
+      </section>
+
+      <section class="panel list-panel" aria-labelledby="listTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Roster</p>
+            <h2 id="listTitle">Monstruos</h2>
+          </div>
+          <button class="icon-button" id="resetButton" type="button" title="Restaurar datos iniciales">
+            Restaurar
+          </button>
+        </div>
+        <div class="monster-grid" id="monsterGrid"></div>
+      </section>
+
+      <section class="panel history-panel" aria-labelledby="historyTitle">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Historial</p>
+            <h2 id="historyTitle">Batallas anteriores</h2>
+          </div>
+          <button class="icon-button" id="clearBattlesButton" type="button" title="Eliminar historial">
+            Limpiar
+          </button>
+        </div>
+        <div class="history-list" id="battleHistory"></div>
+      </section>
+    </main>
+
+    <template id="monsterCardTemplate">
+      <article class="monster-card">
+        <img alt="" class="monster-image" />
+        <div class="monster-info">
+          <div class="monster-top">
+            <h3></h3>
+            <span></span>
+          </div>
+          <dl class="stat-list"></dl>
+          <div class="card-actions">
+            <button class="button small edit" type="button">Editar</button>
+            <button class="button small danger" type="button">Eliminar</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
