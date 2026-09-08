@@ -331,6 +331,17 @@ select:focus {
   line-height: 1.55;
 }
 
+.winner-banner {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  color: #172033;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffe7a3, #f7b84b);
+  border: 1px solid rgba(215, 154, 32, 0.42);
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
 .turn-log {
   display: grid;
   gap: 8px;
@@ -347,6 +358,22 @@ select:focus {
   border: 1px solid var(--line);
   border-radius: 8px;
   line-height: 1.4;
+}
+
+.turn-log li {
+  animation: turnIn 240ms ease both;
+}
+
+@keyframes turnIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .history-list {

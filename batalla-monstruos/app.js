@@ -13,6 +13,7 @@ const cancelEditButton = document.querySelector("#cancelEditButton");
 const resetButton = document.querySelector("#resetButton");
 const clearBattlesButton = document.querySelector("#clearBattlesButton");
 const template = document.querySelector("#monsterCardTemplate");
+const battleButton = battleForm.querySelector("button");
 
 const STORAGE_KEYS = {
   monsters: "monster-battle.monsters",
@@ -51,6 +52,7 @@ const defaultMonsters = [
 
 let monsters = readStorage(STORAGE_KEYS.monsters, defaultMonsters);
 let battles = readStorage(STORAGE_KEYS.battles, []);
+let isBattleRunning = false;
 
 function monsterAvatar(primary, secondary) {
   const svg = `
@@ -167,7 +169,7 @@ function renderSelects() {
 
   monsterA.innerHTML = `<option value="">Seleccionar</option>${options}`;
   monsterB.innerHTML = `<option value="">Seleccionar</option>${options}`;
-  battleForm.querySelector("button").disabled = monsters.length < 2;
+  battleButton.disabled = monsters.length < 2 || isBattleRunning;
 }
 
 function renderBattles() {
@@ -288,15 +290,49 @@ function simulateBattle(firstMonster, secondMonster) {
   };
 }
 
-function showBattleResult(battle) {
-  battleStatus.textContent = "Completada";
+function wait(milliseconds) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, milliseconds);
+  });
+}
+
+function setBattleControlsDisabled(isDisabled) {
+  isBattleRunning = isDisabled;
+  monsterA.disabled = isDisabled;
+  monsterB.disabled = isDisabled;
+  battleButton.disabled = isDisabled || monsters.length < 2;
+  battleButton.textContent = isDisabled ? "Batalla en curso..." : "Iniciar batalla";
+}
+
+function createTurnItem(text) {
+  const item = document.createElement("li");
+  item.textContent = text;
+  return item;
+}
+
+async function showBattleResult(battle) {
+  battleStatus.textContent = "En combate";
   currentResult.innerHTML = `
-    <h3>Ganador: ${escapeHTML(battle.winner)}</h3>
-    <p>${escapeHTML(battle.winner)} derrotó a ${escapeHTML(battle.loser)}. ${escapeHTML(battle.firstAttacker)} atacó primero según las reglas de velocidad y ataque.</p>
-    <ol class="turn-log">
-      ${battle.turns.map((turn) => `<li>${escapeHTML(turn)}</li>`).join("")}
-    </ol>
+    <h3>⚔️ Batalla en curso</h3>
+    <p>${escapeHTML(battle.firstAttacker)} ataca primero según las reglas de velocidad y ataque.</p>
+    <ol class="turn-log" id="liveTurnLog"></ol>
   `;
+
+  const liveTurnLog = document.querySelector("#liveTurnLog");
+  for (const turn of battle.turns) {
+    await wait(650);
+    liveTurnLog.appendChild(createTurnItem(turn));
+    liveTurnLog.scrollTop = liveTurnLog.scrollHeight;
+  }
+
+  await wait(500);
+  battleStatus.textContent = "Completada";
+  currentResult.querySelector("h3").textContent = "Resultado final";
+  currentResult.querySelector("p").textContent = `${battle.winner} derrotó a ${battle.loser}. ${battle.firstAttacker} atacó primero según las reglas de velocidad y ataque.`;
+  currentResult.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="winner-banner">🏆 Ganador: ${escapeHTML(battle.winner)}</div>`
+  );
 }
 
 function deleteBattle(id) {
@@ -324,8 +360,10 @@ monsterForm.addEventListener("submit", (event) => {
   render();
 });
 
-battleForm.addEventListener("submit", (event) => {
+battleForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (isBattleRunning) return;
+
   const firstId = monsterA.value;
   const secondId = monsterB.value;
 
@@ -337,9 +375,12 @@ battleForm.addEventListener("submit", (event) => {
   const firstMonster = monsters.find((monster) => monster.id === firstId);
   const secondMonster = monsters.find((monster) => monster.id === secondId);
   const battle = simulateBattle(firstMonster, secondMonster);
+  setBattleControlsDisabled(true);
+  await showBattleResult(battle);
   battles.unshift(battle);
-  showBattleResult(battle);
-  render();
+  setBattleControlsDisabled(false);
+  renderBattles();
+  saveStorage();
 });
 
 cancelEditButton.addEventListener("click", resetForm);
