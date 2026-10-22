@@ -1,4 +1,203 @@
 const projects = [
+{
+  "name": "Etheryan Optimizer",
+  "repo": "etheryan-io1-entregable",
+  "description": "Aplicación académica Flutter para diagnóstico de teléfonos Android, sensores, almacenamiento y ubicación. Aplica mochila 0/1, ramificación y acotamiento y Dijkstra a problemas de optimización.",
+  "tags": [
+    "Dart",
+    "Flutter",
+    "Kotlin",
+    "Android"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/etheryan-io1-entregable",
+  "accent": "#2764b0"
+},
+{
+  "name": "Taller Nova · Beta",
+  "repo": "taller-nova-beta",
+  "description": "Gestión de taller mecánico con agenda, clientes, vehículos, órdenes, inspección 3D, autorizaciones, pagos y documentos PDF. Incluye modo local y beta compartida con acceso por roles.",
+  "tags": [
+    "TypeScript",
+    "React",
+    "Three.js",
+    "Supabase",
+    "IndexedDB",
+    "PWA"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/taller-nova-beta",
+  "accent": "#2764b0"
+},
+{
+  "name": "CRUD de productos · IPC2",
+  "repo": "IPC2_Practica3_202202123",
+  "description": "Aplicación con API REST Flask y frontend Django para listar, crear, consultar, editar y eliminar productos, con persistencia en JSON.",
+  "tags": [
+    "Python",
+    "Flask",
+    "Django",
+    "REST",
+    "JSON"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/IPC2_Practica3_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "Autorización de DTE · IPC2",
+  "repo": "IPC2_Proyecto3_202202123",
+  "description": "Procesamiento de documentos tributarios XML con validación de NIT, IVA, totales y duplicados. Backend Flask, interfaz Django, consultas y reportes gráficos y PDF.",
+  "tags": [
+    "Python",
+    "Flask",
+    "Django",
+    "XML",
+    "Matplotlib"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/IPC2_Proyecto3_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "UEDI · Sincronización con Notion",
+  "repo": "uedi-notion-sync",
+  "description": "Automatización en Python que procesa avisos académicos por correo, sincroniza tareas en Notion y exporta calendarios ICS con recordatorios. Conserva estado en SQLite y evita duplicados.",
+  "tags": [
+    "Python",
+    "Notion API",
+    "IMAP",
+    "SQLite",
+    "ICS"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/uedi-notion-sync",
+  "accent": "#2764b0"
+},
+{
+  "name": "SimpliCode / XNK",
+  "repo": "P2_202202123",
+  "description": "Proyecto de lenguajes con servidor Node.js, Express y parser Jison. Incluye cliente web con editor CodeMirror y visualización mediante Viz.js.",
+  "tags": [
+    "JavaScript",
+    "Node.js",
+    "Express",
+    "Jison",
+    "CodeMirror",
+    "Viz.js"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": false,
+  "url": "https://github.com/RSGarcia2002/P2_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "Lenguajes Formales · Práctica 1",
+  "repo": "LFP-202202123",
+  "description": "Práctica académica de Lenguajes Formales y de Programación, con implementación en Java y recursos HTML.",
+  "tags": [
+    "Java",
+    "HTML"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/LFP-202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "IPC2 · Práctica 2",
+  "repo": "IPC2_Practica2_202202123",
+  "description": "Segunda práctica académica en Python del curso Introducción a la Programación y Computación 2.",
+  "tags": [
+    "Python"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": false,
+  "url": "https://github.com/RSGarcia2002/IPC2_Practica2_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "IPC2 · Proyecto 1",
+  "repo": "IPC2_Proyecto1_202202123",
+  "description": "Proyecto académico en Python del curso Introducción a la Programación y Computación 2.",
+  "tags": [
+    "Python"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/IPC2_Proyecto1_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "IPC2 · Práctica 1",
+  "repo": "IPC2_Practica1_202202123",
+  "description": "Práctica académica en Python del curso Introducción a la Programación y Computación 2.",
+  "tags": [
+    "Python"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/IPC2_Practica1_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "IPC1 · Proyecto 2",
+  "repo": "IPC1_Proyecto2_202202123",
+  "description": "Proyecto académico web con componentes de cliente y servidor, desarrollado con JavaScript, HTML y CSS.",
+  "tags": [
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/IPC1_Proyecto2_202202123",
+  "accent": "#2764b0"
+},
+{
+  "name": "Automatizaciones IPCTEC",
+  "repo": "Practica-1-IPC1",
+  "description": "Práctica académica de automatizaciones IPCTEC desarrollada en Java.",
+  "tags": [
+    "Java"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/Practica-1-IPC1",
+  "accent": "#2764b0"
+},
+{
+  "name": "IPC1 · Proyecto 1",
+  "repo": "Proyecto-1-IPC1",
+  "description": "Proyecto académico de Introducción a la Programación y Computación 1 desarrollado con Java y recursos HTML.",
+  "tags": [
+    "Java",
+    "HTML"
+  ],
+  "date": "Catálogo de proyectos",
+  "private": true,
+  "url": "https://github.com/RSGarcia2002/Proyecto-1-IPC1",
+  "accent": "#2764b0"
+},
+{
+  "name": "Portafolio profesional",
+  "repo": "Portafolio",
+  "description": "Sitio responsive que reúne proyectos públicos y privados, tecnologías y medios de contacto, publicado mediante GitHub Pages.",
+  "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "GitHub Pages"
+  ],
+  "date": "Actualizado en octubre de 2026",
+  "url": "https://github.com/RSGarcia2002/Portafolio",
+  "accent": "#0f766e"
+},
   {
     name: "CreditGuard · Machine Learning",
     repo: "OLC2_EJ26_ML_4 / Proyecto1",
@@ -123,6 +322,17 @@ const projects = [
 ];
 
 const projectGrid = document.querySelector("#projectGrid");
+const technologyGroups = [
+  ["Lenguajes y formatos", ["Python", "JavaScript", "TypeScript", "Java", "C++", "PHP", "Dart", "Kotlin", "Pascal", "Go", "SQL / T-SQL", "PL/pgSQL", "HTML", "CSS", "Shell", "XML", "JSON", "ANTLR"]],
+  ["Web, móvil y visualización", ["React", "Vite", "Node.js", "Express", "Flask", "Django", "Streamlit", "Flutter", "Android", "Three.js", "React Three Fiber", "Drei", "CodeMirror", "Viz.js", "Jinja", "Crow HTTP"]],
+  ["Datos, machine learning y documentos", ["PostgreSQL", "SQL Server", "MongoDB", "Mongoose", "SQLite", "Supabase", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Random Forest", "K-Means", "TF-IDF", "PCA", "SVD", "Joblib", "WeasyPrint", "OpenPyXL", "PyMuPDF", "Tesseract OCR", "jsPDF"]],
+  ["Infraestructura, integraciones y pruebas", ["Git", "GitHub", "GitHub Pages", "Docker", "Docker Compose", "Render", "AWS EC2", "AWS S3", "Cloudinary", "Notion API", "IMAP", "ICS", "REST", "JWT", "Flask-Login", "CSRF", "localStorage", "IndexedDB", "Dexie", "PWA", "Service Worker", "ANTLR4", "Jison", "Graphviz", "CMake", "Postman", "Newman", "Pytest", "Vitest", "Testing Library"]],
+  ["Lenguajes presentes en soporte de plataformas", ["C", "Swift", "Objective-C"]],
+];
+document.querySelector(".skills-layout").innerHTML = technologyGroups.map(([title, technologies]) => `
+  <div class="skill-group"><h3>${title}</h3><div class="chips">${technologies.map((technology) => `<span>${technology}</span>`).join("")}</div></div>
+`).join("");
+document.querySelector("#projectSummary").textContent = `${projects.length} proyectos · 24 repositorios de GitHub · Actualizado el 22 de octubre de 2026`;
 
 projectGrid.innerHTML = projects
   .map((project) => {
