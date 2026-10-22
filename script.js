@@ -1,5 +1,36 @@
 const projects = [
   {
+    name: "Comercial La Estrella",
+    repo: "BD1-ProyectoFase2-202202123",
+    description:
+      "Backend REST académico con Node.js y SQL Server 2022: CRUD para 19 entidades, inventario por tienda, ventas, pagos y reportes. Incluye transacciones, vistas, triggers, Docker y pruebas de integración y concurrencia.",
+    tags: ["Node.js", "SQL Server", "Docker", "API REST"],
+    date: "Octubre de 2026",
+    url: "https://github.com/RSGarcia2002/BD1-ProyectoFase2-202202123",
+    accent: "#2764b0",
+  },
+  {
+    name: "Cotizador Multiservicios Siney",
+    repo: "cotizador-web",
+    description:
+      "Aplicación comercial con Flask y PostgreSQL para gestionar cotizaciones, órdenes de compra y facturas. Genera PDFs, conserva historial, administra catálogos e incorpora autenticación y extracción de datos con OCR.",
+    tags: ["Python", "Flask", "PostgreSQL", "OCR / PDF"],
+    date: "Septiembre de 2026",
+    url: "https://github.com/RSGarcia2002/cotizador-web",
+    accent: "#5b5f97",
+  },
+  {
+    name: "Batalla de Monstruos",
+    repo: "Portafolio / batalla-monstruos",
+    description:
+      "Prueba técnica con creación, edición y eliminación de monstruos, combate por turnos y narración progresiva. Calcula daño y orden de ataque, muestra al ganador y conserva monstruos e historial en el navegador.",
+    tags: ["JavaScript", "HTML", "CSS", "localStorage"],
+    date: "Septiembre de 2026",
+    url: "https://github.com/RSGarcia2002/Portafolio/tree/main/batalla-monstruos",
+    demo: "./batalla-monstruos/",
+    accent: "#d95d39",
+  },
+  {
     name: "Golampi Compiler",
     repo: "golampi-compiler",
     description:
@@ -38,16 +69,6 @@ const projects = [
     date: "Actualizado en 2026",
     url: "https://github.com/RSGarcia2002/OLC2-Proyecto1-Golampi",
     accent: "#d99a22",
-  },
-  {
-    name: "Cotizador Web",
-    repo: "cotizador-web",
-    description:
-      "Aplicacion web para cotizacion de multiservicios con backend en Python y una interfaz en HTML/CSS enfocada en operaciones de negocio.",
-    tags: ["Python", "HTML", "CSS", "Web app"],
-    date: "Actualizado en 2026",
-    url: "https://github.com/RSGarcia2002/cotizador-web",
-    accent: "#5b5f97",
   },
   {
     name: "IPC2 Proyecto 2",
@@ -105,6 +126,7 @@ projectGrid.innerHTML = projects
         <h3>${project.name}</h3>
         <p>${project.description}</p>
         <div class="project-tags">${tags}</div>
+        ${project.demo ? `<a class="project-link" href="${project.demo}" target="_blank" rel="noreferrer">Probar aplicación →</a>` : ""}
         <div class="project-footer">
           <span class="project-date">${project.repo}</span>
           <a class="project-link" href="${project.url}" target="_blank" rel="noreferrer">Ver repositorio</a>
