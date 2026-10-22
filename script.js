@@ -1,5 +1,25 @@
 const projects = [
   {
+    name: "CreditGuard · Machine Learning",
+    repo: "OLC2_EJ26_ML_4 / Proyecto1",
+    description:
+      "Aplicación académica en Streamlit para estimar riesgo de incumplimiento crediticio con Random Forest. Integra limpieza de datos, análisis exploratorio, entrenamiento, matriz de confusión, métricas de clasificación y predicciones individuales.",
+    tags: ["Python", "Streamlit", "Scikit-learn", "Random Forest"],
+    date: "Proyecto de machine learning",
+    private: true,
+    accent: "#0f766e",
+  },
+  {
+    name: "TalentMosaic · Machine Learning",
+    repo: "OLC2_EJ26_ML_4 / Proyecto2",
+    description:
+      "Aplicación de aprendizaje no supervisado para segmentar freelancers y agrupar reseñas con K-Means. Incluye preparación de datos, TF-IDF, visualizaciones con PCA y SVD, evaluación de clusters y exportación de resultados.",
+    tags: ["Python", "Streamlit", "K-Means", "TF-IDF"],
+    date: "Proyecto de machine learning",
+    private: true,
+    accent: "#7c3aed",
+  },
+  {
     name: "Comercial La Estrella",
     repo: "BD1-ProyectoFase2-202202123",
     description:
@@ -129,7 +149,7 @@ projectGrid.innerHTML = projects
         ${project.demo ? `<a class="project-link" href="${project.demo}" target="_blank" rel="noreferrer">Probar aplicación →</a>` : ""}
         <div class="project-footer">
           <span class="project-date">${project.repo}</span>
-          <a class="project-link" href="${project.url}" target="_blank" rel="noreferrer">Ver repositorio</a>
+          ${project.private ? '<span class="project-date">Repositorio privado</span>' : `<a class="project-link" href="${project.url}" target="_blank" rel="noreferrer">Ver repositorio</a>`}
         </div>
       </article>
     `;
